@@ -29,3 +29,5 @@ ENV AIRFLOW__CORE__FERNET_KEY=0897eeabe6de2d4ec89c5f331057b9028f35f47bfd33cff0e3
 ENV AIRFLOW__WEBSERVER__EXPOSE_CONFIG=True
 
 ENTRYPOINT [ "/entrypoint.sh" ]
+
+RUN python -m pip install matplotlib
