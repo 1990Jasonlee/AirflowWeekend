@@ -1,7 +1,8 @@
 from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 from script import some_script
+
 
 default_args = {
     'owners': 'airflow',
@@ -17,3 +18,9 @@ with DAG('pokemon_dag', start_date=datetime(2022, 1, 1),
         python_callable=some_script(),
         dag=dag
     )
+
+#docker-compose up airflow-init
+#docker build . --tag extending_airflow:latest 
+#docker compose up -d --no-deps --build airflow-webserver airflow-scheduler
+#http://localhost:8080
+#docker-compose down -v
