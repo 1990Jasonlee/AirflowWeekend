@@ -33,6 +33,3 @@ def some_script():
 #                       yaxis_title='Number of Pokemons',
 #                       title='Pokemon by Generations')
 #    fig.write_image(f'/Users/jason/dev/AirflowWeekend/data/2')
-
-#    merge = pd.merge(df, df1, on = 'name')
-#    merge.to_csv('./dags/new.csv')

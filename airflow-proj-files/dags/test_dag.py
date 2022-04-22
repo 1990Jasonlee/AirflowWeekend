@@ -13,9 +13,10 @@ with DAG('pokemon_dag', start_date=datetime(2022, 1, 1),
          schedule_interval='@once',
          catchup=False,
          default_args=default_args) as dag:
+
     task = PythonOperator(
-        task_id='pokemon script',
-        python_callable=some_script(),
+        task_id='pokemon_script',
+        python_callable=some_script,
         dag=dag
     )
 
